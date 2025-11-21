@@ -1,0 +1,49 @@
+# 继承和多态1
+
+class Animal(object):
+    def run(self):
+        print("Animal is running...")
+
+class Dog(Animal): # Animal 是 Dog 的父类
+    def run(self): # 子类的 run 覆盖了父类的 run
+        print("Dog is running...")
+
+    def eat(self):
+        print("Eating meat...")
+
+class Cat(Animal):
+    def run(self):
+        print("Cat is running...")
+    
+    def eat(self):
+        print("Eating fish...")
+
+dog = Dog()
+cat = Cat()
+
+dog.run()
+cat.run()
+
+a = list() # a是list类型
+b = Animal() # b是Animal类型
+c = Dog() # c是Dog类型
+
+print(isinstance(a, list))
+print(isinstance(b, Animal))
+print(isinstance(c, Dog))
+print(isinstance(c, Animal)) # c 不仅仅是 Dog, 还是 Animal
+print(isinstance(b, Dog)) # 反过来则不行
+
+def run_twice(animal):
+    animal.run()
+    animal.run()
+
+run_twice(Animal())
+run_twice(Dog())
+run_twice(Cat())
+
+class Tortoise(Animal):
+    def run(self):
+        print("Tortoise is crawling slowly...")
+
+run_twice(Tortoise())
