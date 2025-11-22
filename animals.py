@@ -18,6 +18,10 @@ class Cat(Animal):
     def eat(self):
         print("Eating fish...")
 
+class Schnauzer(Dog): # Schnauzer 是 Dog 的子类
+    def run(self):
+        print("Schnauzer is running...")
+
 dog = Dog()
 cat = Cat()
 
