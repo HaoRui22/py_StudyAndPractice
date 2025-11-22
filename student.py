@@ -1,6 +1,7 @@
 # 面向对象编程
 class Student(object):
-    def __init__(self, name, gender, score):
+    name = 'Student'
+    def __init__(self, name, gender = 'male', score = 0):
         self.name = name
         self.gender = gender
         self.score = score
