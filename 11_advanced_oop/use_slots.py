@@ -35,3 +35,27 @@ class LmtMember(object):
 
 lm = LmtMember()
 lm.name = 'Denny'
+lm.age = 23
+print(f"{lm.name}: {lm.age}")
+# lm.gender = 'male'
+# AttributeError: 'LmtMember' object has no attribute 'gender' and no __dict__ for setting new attributes
+
+# 需注意，__slot__ 定义的属性仅对当前类实例有效，对继承子类是无效的：
+class NewMenber(LmtMember):
+    pass
+
+ln = NewMenber()
+ln.gender = 'female'
+print(ln.gender)
+
+# 除非在子类中也定义__slots__，这样，子类实例允许定义的属性就是自身的__slots__加上父类的__slots__。
+class NewLmtMember(LmtMember):
+    __slots__ = ('gender')
+
+lmn = NewLmtMember()
+lmn.name = 'Jack'
+lmn.age = 24
+lmn.gender = 'male'
+print(f"{lmn.name}, {lmn.age}, {lmn.gender}")
+# lmn.addr = 'US'
+# AttributeError: 'NewLmtMember' object has no attribute 'addr' and no __dict__ for setting new attributes
