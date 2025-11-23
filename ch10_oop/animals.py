@@ -22,38 +22,39 @@ class Schnauzer(Dog): # Schnauzer 是 Dog 的子类
     def run(self):
         print("Schnauzer is running...")
 
-dog = Dog()
-cat = Cat()
-
-dog.run()
-cat.run()
-
-a = list() # a是list类型
-b = Animal() # b是Animal类型
-c = Dog() # c是Dog类型
-
-print(isinstance(a, list))
-print(isinstance(b, Animal))
-print(isinstance(c, Dog))
-print(isinstance(c, Animal)) # c 不仅仅是 Dog, 还是 Animal
-print(isinstance(b, Dog)) # 反过来则不行
-
 def run_twice(animal):
     animal.run()
     animal.run()
-
-run_twice(Animal())
-run_twice(Dog())
-run_twice(Cat())
 
 class Tortoise(Animal):
     def run(self):
         print("Tortoise is crawling slowly...")
 
-run_twice(Tortoise())
-
 class Timer(object):
     def run(self):
         print('Start...')
 
-Timer().run()
+if __name__ == "__main__":
+    dog = Dog()
+    cat = Cat()
+
+    dog.run()
+    cat.run()
+
+    a = list() # a是list类型
+    b = Animal() # b是Animal类型
+    c = Dog() # c是Dog类型
+
+    print(isinstance(a, list))
+    print(isinstance(b, Animal))
+    print(isinstance(c, Dog))
+    print(isinstance(c, Animal)) # c 不仅仅是 Dog, 还是 Animal
+    print(isinstance(b, Dog)) # 反过来则不行
+    
+    run_twice(Animal())
+    run_twice(Dog())
+    run_twice(Cat())
+
+    run_twice(Tortoise())
+
+    Timer().run()

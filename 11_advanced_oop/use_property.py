@@ -1,1 +1,0 @@
-from 10_oop.student import
