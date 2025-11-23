@@ -10,4 +10,4 @@ wheels/
 .venv
 
 # VS code configs
-.vscode/
+#.vscode/
