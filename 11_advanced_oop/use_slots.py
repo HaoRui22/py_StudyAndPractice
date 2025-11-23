@@ -33,4 +33,5 @@ print(m1.age)
 class LmtMember(object):
     __slots__ = ('name', 'age') # 用 tuple 元组 定义允许绑定的属性名
 
-m = LmtMember()
+lm = LmtMember()
+lm.name = 'Denny'
