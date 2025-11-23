@@ -9,5 +9,5 @@ wheels/
 # Virtual environments
 .venv
 
-# VS code configs
-#.vscode/
+# VS code user's configs
+.vscode/setting.json
