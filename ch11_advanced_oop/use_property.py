@@ -1,4 +1,4 @@
-import ch10_oop
+import ch10_oop.student
 
 # 绑定属性时直接把属性暴露出去，便携简单但无法进行参数检查：
 s = ch10_oop.student.Student()
