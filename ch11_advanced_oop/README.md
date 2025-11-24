@@ -4,6 +4,8 @@
   - [use_property.py](./use_property.py)
   - 练习
     - [object_screen.py](./object_screen.py)
+- 11.3 多重继承
+  - [multi_animals.py](./multi_animals.py)
 
 
 # 11.1 使用`__slots__`
@@ -74,3 +76,15 @@ def score(self, value):
 只有 getter → 只读
 
 有 getter + setter + deleter → 可管理删除逻辑
+
+# 11.3 多重继承
+
+由于Python允许使用多重继承，因此，MixIn就是一种常见的设计。
+
+只允许单一继承的语言（如Java）不能使用MixIn的设计。
+
+# 11.4 定制类
+
+# 11.5 使用枚举类
+
+# 11.6 使用元类
