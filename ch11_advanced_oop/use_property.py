@@ -1,5 +1,6 @@
 import ch10_oop.student as student
 import ch10_oop.protected_student as protected_student
+from datetime import date
 
 class PpStudent(object):
     def __init__(self, score = 0):
@@ -9,13 +10,26 @@ class PpStudent(object):
     def score(self):
         return self.__score
     
-    @score.setter
+    @score.setter # 此装饰器是 @property 创建的，负责把 setter 方法变成属性赋值，由此得到一个可控的属性操作
     def score(self, value):
         if not isinstance(value, int):
             raise ValueError('bad input')
         if value < 0 or value > 100:
             raise ValueError('bad score')
         self.__score = value
+    
+    @property # 同上定义 getter 。可读
+    def birthYear(self):
+        return self.__birthYear
+
+    @birthYear.setter # 可写
+    def birthYear(self, value):
+        self.__birthYear = value
+
+    @property # 只有 getter，没有 setter，只读
+    def age(self):
+        return date.today().year - self.__birthYear
+        
 
 
 if __name__ == '__main__':
@@ -42,3 +56,9 @@ if __name__ == '__main__':
     print(pps.score)
     # pps.score = 110
     # ValueError: bad score
+    # 设置读写属性 birthYear
+    pps.birthYear = 2001
+    # 读取
+    print(pps.birthYear)
+    # 读取只读属性
+    print(pps.age)

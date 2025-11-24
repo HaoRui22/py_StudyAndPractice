@@ -8,8 +8,8 @@
   - [get_object_type.py](./get_object_type.py)
 - 实例属性和类属性
   - [attribute.py](./attribute.py)
-- 练习
-  - [count_stu.py](./count_stu.py)
+  - 练习
+    - [count_stu.py](./count_stu.py)
 
 # 10.1 类和实例
 
