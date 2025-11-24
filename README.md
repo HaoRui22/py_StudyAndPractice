@@ -2,7 +2,7 @@
 
 此仓库为跟随[廖雪峰Python教程](https://liaoxuefeng.com/books/python/introduction/index.html)学习时编写的练习代码.
 
-## 10. [面向对象编程](./10_oop/)
+## 10. [面向对象编程](./ch10_oop/)
 
 面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。
 
@@ -18,7 +18,7 @@
 4. 获取对象信息
 5. 实例属性和类属性
 
-## 11. [面向对象高级编程](./11_advanced_oop/)
+## 11. [面向对象高级编程](./ch11_advanced_oop/)
 
 数据封装、继承和多态只是面向对象程序设计中最基础的3个概念。在Python中，面向对象还有很多高级特性，允许我们写出非常强大的功能。
 
