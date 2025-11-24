@@ -6,6 +6,7 @@
     - [object_screen.py](./object_screen.py)
 - 11.3 多重继承
   - [multi_animals.py](./multi_animals.py)
+- 11.4 定制类
 
 
 # 11.1 使用`__slots__`
@@ -84,6 +85,16 @@ def score(self, value):
 只允许单一继承的语言（如Java）不能使用MixIn的设计。
 
 # 11.4 定制类
+
+看到类似__slots__这种形如__xxx__的变量或者函数名就要注意，这些在Python中是有特殊用途的。
+
+__slots__我们已经知道怎么用了，__len__()方法我们也知道是为了能让class作用于len()函数。
+
+除此之外，Python的class中还有许多这样有特殊用途的函数，可以帮助我们定制类。
+
+Python的class允许定义许多定制方法，可以让我们非常方便地生成特定的类。
+
+本节介绍的是最常用的几个定制方法，还有很多可定制的方法，请参考[Python的官方文档](http://docs.python.org/3/reference/datamodel.html#special-method-names)。
 
 # 11.5 使用枚举类
 
