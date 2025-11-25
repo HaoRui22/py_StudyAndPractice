@@ -49,18 +49,26 @@ class Fib(object):
                 a, b = b, a + b
             return a
         if isinstance(n, slice): # n 是切片
-            start = n.start
+            start = n.start or 0
             stop = n.stop
-
-            if start is None:
-                start = 0
+            step = n.step or 1
+            
+            if stop is None:
+                raise ValueError("There must be a STOP value!")
             a, b = 1, 1
-            L = []
-            for x in range(stop):
-                if x >= start:
-                    L.append(a)
+            full = []
+            for _ in range(stop):
+                full.append(a)
                 a, b = b, a + b
+            L = full[start:stop:step]
             return L
 
 f = Fib()
-print(f[5:10])
+print(f[1:10])
+print(f[1:10:2])
+
+# 以上 __getitem__ 还没有对负数做处理。所以，要正确实现一个__getitem__()还是有很多工作要做的。
+
+#此外，如果把对象看成dict，__getitem__()的参数也可能是一个可以作key的object，例如str。
+# 与之对应的是__setitem__()方法，把对象视作list或dict来对集合赋值。最后，还有一个__delitem__()方法，用于删除某个元素。
+# 总之，通过上面的方法，我们自己定义的类表现得和Python自带的list、tuple、dict没什么区别，这完全归功于动态语言的“鸭子类型”，不需要强制继承某个接口。
