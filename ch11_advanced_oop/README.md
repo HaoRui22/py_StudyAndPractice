@@ -17,7 +17,9 @@
   - 练习
     - [stu_enum.py](./stu_enum.py)
 - 11.6 使用元类
-
+  - [creat_class_on_the_fly.py](./creat_class_on_the_fly.py)
+  - [use_metaclass.py](./use_metaclass.py)
+  - [orm.py](./orm.py)
 
 # 11.1 使用`__slots__`
 
