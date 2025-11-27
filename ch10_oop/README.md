@@ -21,7 +21,7 @@
 
 和静态语言不同，Python允许对实例变量绑定任何数据，也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：
 
-```
+```py
 >>> bart = Student('Bart Simpson', 59)
 >>> lisa = Student('Lisa Simpson', 87)
 >>> bart.age = 8
@@ -46,15 +46,15 @@ AttributeError: 'Student' object has no attribute 'age'
 通过内置的一系列函数，我们可以对任意一个Python对象进行剖析，拿到其内部的数据。要注意的是，只有在不知道对象信息的时候，我们才会去获取对象信息。
 
 如果可以直接写：
-```
+```py
 sum = obj.x + obj.y
 ```
 就不要写：
-```
+```py
 sum = getattr(obj, 'x') + getattr(obj, 'y')
 ```
 一个正确的用法的例子如下：
-```
+```py
 def readImage(fp):
     if hasattr(fp, 'read'):
         return readData(fp)

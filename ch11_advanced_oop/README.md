@@ -14,6 +14,8 @@
   - [_special_call.py](./_special_call.py)
 - 11.5 使用枚举类
   - [use_enum.py](./use_enum.py)
+  - 练习
+    - [stu_enum.py](./stu_enum.py)
 - 11.6 使用元类
 
 
@@ -45,13 +47,15 @@
 2. getter 与 setter 的本质
 
 使用 @property 装饰的方法会变成一个 property 对象：
+
 ```
 属性访问 → property.__get__ → 调用 getter 方法
 属性写入 → property.__set__ → 调用 setter 方法（若定义）
 ```
 
 setter 并不会自动生成，必须显式使用：
-```
+
+```py
 @属性名.setter
 ```
 
@@ -60,13 +64,14 @@ setter 并不会自动生成，必须显式使用：
 3. 为什么要使用 @property
 
 它让你可以用“访问属性”的方式来调用逻辑，而不是方法调用：
-```
+```py
 s.age = 20     # setter
 print(s.age)   # getter
 ```
 
 但同时可以在 setter 中加入类型检查、范围检查等逻辑：
-```
+
+```py
 @score.setter
 def score(self, value):
     if not isinstance(value, int):
@@ -146,5 +151,36 @@ Python的class允许定义许多定制方法，可以让我们非常方便地生
   - 提供了把对象和函数视为“同一种东西”的灵活性，有时候方便把逻辑封装成“对象+状态+行为”。
 
 # 11.5 使用枚举类
+
+`Enum`可以把一组相关常量定义在一个`class`中，且`class`不可变，而且成员可以直接比较。
+
+枚举类`Enum`可以动态创建：
+
+```py
+Month = Enum('Month',('Jan', 'Feb', 'Mar', ..., 'Dec'))
+```
+
+等价于
+
+```py
+class Month(Enum):
+    Jan = 1
+    Feb = 2
+    Mar = 3
+    ...
+    Dec = 12
+```
+
+动态创建时枚举成员的名称列表不需要写等号或数字。`Enum`会自动从`1`开始编号
+
+`Enum`成员的固定核心属性：
+
+| 属性          | 含义                   |
+| ----------- | -------------------- |
+| `name`      | 枚举成员的名称字符串，如 `"Jan"` |
+| `value`     | 枚举成员的底层值，如 `1`       |
+| `__class__` | 它所属的枚举类，例如 `Month`   |
+
+枚举值本质上就是 (name, value) 的绑定实例。
 
 # 11.6 使用元类
