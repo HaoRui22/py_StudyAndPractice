@@ -7,9 +7,10 @@
   - 练习
     - [debug_ex.py](./debug_ex.py)
 - 12.2
-  - [do_print2debug.py](./do_print2debug.py)
+  - [print2debug.py](./print2debug.py)
   - [do_assert.py](./do_assert.py)
   - [do_logging.py](./do_logging.py)
+  - [log2file.py](./log2file.py)
   - [do_pdb.py](./do_pdb.py)
 - 12.3
 - 12.4
