@@ -4,6 +4,8 @@
   - [err_logging.py](./err_logging.py)
   - [err_raise.py](./err_raise.py)
   - [err_reraise.py](./err_reraise.py)
+  - 练习
+    - [debug_ex.py](./debug_ex.py)
 - 12.2
 - 12.3
 - 12.4
@@ -15,3 +17,9 @@
 Python所有的错误都是从BaseException类派生的，常见的错误类型和继承关系看这里:
 
 https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+
+错误是`class`，捕获一个错误就是捕获到该class的一个实例，并且它不是凭空产生的，而是有意创建并抛出的。可以根据需要定义一个错误的class，选择好继承关系并用`raise`语句抛出，但在Python已有内置错误类型的情况下，尽量使用内置的错误类型。
+
+Python内置的try...except...finally用来处理错误十分方便。出错时，会分析错误信息并定位错误发生的代码位置才是最关键的。
+
+程序也可以主动抛出错误，让调用者来处理相应的错误。但是，应该在文档中写清楚可能会抛出哪些错误，以及错误产生的原因。
