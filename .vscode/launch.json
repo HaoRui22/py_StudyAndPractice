@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Run Current File (root cwd)",
-      "type": "debugpy",
+      "type": "python",
       "request": "launch",
       "program": "${file}",
       "cwd": "${workspaceFolder}",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Run as Module",
-      "type": "debugpy",
+      "type": "python",
       "request": "launch",
       "module": "${relativeFileDirname}/${fileBasenameNoExtension}",
       "cwd": "${workspaceFolder}",

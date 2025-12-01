@@ -12,4 +12,9 @@ class Dict(dict):
 
     def __getattr__(self, key):
         try:
-            return
+            return self[key]
+        except KeyError:
+            raise AttributeError(fr"'Dict' object has no attribute '{key}'")
+        
+    def __setattr__(self, key, value):
+        self[key] = value
