@@ -15,6 +15,8 @@
 - 12.3
   - [mydict.py](./mydict.py)
   - [mydect_test.py](./mydict_test.py)
+  - 练习
+    - [test_student.py](./test_student.py)
 - 12.4
 
 # 12.1 错误处理
@@ -62,3 +64,19 @@ Python内置的try...except...finally用来处理错误十分方便。出错时�
 - 单元测试的测试用例要覆盖常用的输入组合、边界条件和异常。
 - 单元测试代码要非常简单，如果测试代码太复杂，那么测试代码本身就可能有bug。
 - 单元测试通过了并不意味着程序就没有bug了，但是不通过程序肯定有bug。
+
+写单元测试步骤
+
+- 导入`unittest`模块
+- 导入要测试的模块 / 类
+- 定义测试类，继承自`unittest.TestCase`
+- 在测试类中为想测试的功能写多个以`teat_`开头的方法，每个方法代表一个测试用例test case
+- 运行测试
+  - 在脚本末尾写`if __name__=='__main__': unittest.main()`，然后直接`python mydict_test.py`运行。
+  - 或者，在命令行使用`python -m unittest mydict_test`（不带 .py 后缀）也可以。这样更适合批量运行很多测试。
+    - 也可以指定只运行某个测试方法例如：`python -m unittest mydict_test.TestDict.test_attr`
+
+断言
+- 使用 self.assertEqual(...) 来判断某个表达式与预期值是否相等。 
+- 使用 self.assertTrue(...)、self.assertFalse(...) 等判断布尔条件。 
+- 使用 with self.assertRaises(SomeException): 来断言某段代码应当抛出指定类型的异常 —— 适用于测试错误／异常情况。
