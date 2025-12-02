@@ -18,6 +18,9 @@
   - 练习
     - [test_student.py](./test_student.py)
 - 12.4
+  - [mydict2.py](./mydict2.py)
+  - 练习
+    - [doctest_fact.py](./doctest_fact.py)
 
 # 12.1 错误处理
 
@@ -80,3 +83,35 @@ Python内置的try...except...finally用来处理错误十分方便。出错时�
 - 使用 self.assertEqual(...) 来判断某个表达式与预期值是否相等。 
 - 使用 self.assertTrue(...)、self.assertFalse(...) 等判断布尔条件。 
 - 使用 with self.assertRaises(SomeException): 来断言某段代码应当抛出指定类型的异常 —— 适用于测试错误／异常情况。
+
+# 12.4 文档测试
+
+doctest:
+- 是Python 内置测试用具，用来执行写在 docstring 里的交互式示例
+- docstring 里的`>>>`代码和输出既是示例又是测试
+
+用法：
+- 在函数 / 类的 docstring 中写交互式示例：
+  - ```py
+    >>> add(1, 2)
+    3
+    ```
+- 在文件末尾追加：
+  - ```py
+    if __name__ == '__main__':
+        import doctest
+        doctest.testmod()
+    ```
+- 运行脚本，doctest 会自动验证示例是否与真实输出一致。
+
+使用规则：
+- 输出必须完全匹配，包括空格、引号等。
+- 可用`...`作为通配符匹配长输出或异常堆栈。
+- 示例既能测试返回值，也能测试异常。
+
+场景：
+- 适合简单函数、库的轻量级测试。
+- 示例既是文档又是测试，可避免文档与代码不一致。
+- 不适合复杂逻辑、大量状态或动态输出的场景。
+
+doctest非常有用，不但可以用来测试，还可以直接作为示例代码。通过某些文档生成工具，就可以自动把包含doctest的注释提取出来。用户看文档的时候，同时也看到了doctest。
