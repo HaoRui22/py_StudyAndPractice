@@ -41,3 +41,11 @@ f.close()
 f = open('./ch13_io/gbk.txt', 'r', encoding='gbk')
 print(f.read())
 f.close
+# 遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError
+# 而open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：
+f = open('./ch13_io/gbk.txt', encoding='utf-8', errors='ignore')
+print(f.read())
+f.close
+
+# 写文件与读文件相同，唯一区别是调用 open() 时传入的参数：
+# 'w' 表示写文本文件，'wb'表示写二进制文件
